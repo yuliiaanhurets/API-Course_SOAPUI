@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="6e13ccf8-4df2-4a6d-a4be-540b67b4b3c4" activeEnvironment="Default" name="ClickUp-API-Tests" resourceRoot="" soapui-version="5.7.2" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="com.smartbear.swagger.ExportSwaggerAction$FormBase Path"/><con:setting id="com.smartbear.swagger.ExportSwaggerAction$FormTarget File"/><con:setting id="com.smartbear.swagger.ExportSwaggerAction$FormFormat">json</con:setting><con:setting id="com.smartbear.swagger.ExportSwaggerAction$FormAPI Version">Swagger 2.0</con:setting><con:setting id="com.smartbear.swagger.ExportSwaggerAction$FormSwagger Version">Swagger 2.0</con:setting></con:settings><con:interface xsi:type="con:RestService" id="ce0fdd26-cc22-4698-97de-944f58825a14" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://api.clickup.com" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>https://api.clickup.com</con:endpoint></con:endpoints><con:resource name="" path="/api/v2/space/${#Project#space_id}/tag" id="482bc743-b3d0-4684-9005-72f9ba4a6269"><con:settings/><con:parameters/><con:method name="Get Space Tags" id="a0173e69-1493-43ad-b51d-0da31f1db690" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>400</con:status><con:params/><con:element xmlns:tag="https://api.clickup.com/api/v2/space/90152414834/tag">tag:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:tag="https://api.clickup.com/api/v2/space/90152414834/tag">tag:Response</con:element></con:representation><con:request name="Request 1" id="2961ea46-bda4-4217-9c01-e69967804342" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#Token}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request/><con:originalUri>https://api.clickup.com/api/v2/space/90152414834/tag</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request></con:method><con:method name="Create Space Tag" id="f132a167-79a1-4907-aa69-a5d7b258aba6" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>400</con:status><con:params/><con:element xmlns:tag="https://api.clickup.com/api/v2/space/90152414834/tag">tag:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element>Response</con:element></con:representation><con:request name="Request 1" id="02ccfa33-95d2-4225-97cf-f8cc0a49d7f5" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="pk_74479730_Z3JHDR03IN60ELVOY25UUXPU7NB6ATRS" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request>{
+"tag": {
+"name": "Tag Name",
+"tag_fg": "#000000",
+"tag_bg": "#000000"
+	}
+}</con:request><con:originalUri>https://api.clickup.com/api/v2/space/90152414834/tag</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request></con:method></con:resource><con:resource name="{tag_name}" path="/api/v2/space/${#Project#space_id}/tag/${#Project#tag_name}" id="b1a10884-8c7d-4f96-a0e4-20f90052cfc9"><con:settings/><con:parameters/><con:method name="Update Space Tag" id="42db2473-896e-4569-be6a-227815228e26" method="PUT"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element>Response</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>text/html; charset=utf-8</con:mediaType><con:status>404</con:status><con:params/><con:element>html</con:element></con:representation><con:request name="Request 1" id="a131bdf9-5ac9-4e54-b007-fc28765d769d" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#Token}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request>{
+"tag": {
+"name": "Updated Tag",
+"fg_color": "#ffffff",
+"bg_color": "#ffffff"
+}
+}</con:request><con:originalUri>https://api.clickup.com/api/v2/space/90152414834/tag/tag_name</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request></con:method><con:method name="Delete Space Tag" id="a64c8178-0a16-4f15-9010-da370c0856e5" method="DELETE"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>text/html; charset=utf-8</con:mediaType><con:status>404</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element>Response</con:element></con:representation><con:request name="Request 1" id="76f5a864-f4ef-40b3-ab48-859fe71c49d7" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#Token}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request/><con:originalUri>https://api.clickup.com/api/v2/space/90152414834/tag/tag_name</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request></con:method></con:resource><con:resource name="{tag_name}" path="/api/v2/task/${#Project#task_id}/tag/${#Project#tag_name}" id="f4bfdedc-109e-4cfc-8452-2a8b4062e285"><con:settings/><con:parameters/><con:method name="Add Tag To Task" id="65ab1dc7-5e80-470f-b078-b8e75afc1f94" method="POST"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>400</con:status><con:params/><con:element xmlns:tag="https://api.clickup.com/api/v2/task/86bz7w9vk/tag/tag_name">tag:Fault</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="REQUEST"><con:mediaType>"application/json"</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element>Response</con:element></con:representation><con:request name="api/v2/task/{task_id}/tag/{tag_name}" id="dd60b01c-0361-477d-8b68-863322f340db" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Authorization" value="${#Project#Token}"/>
+  <con:entry key="Content-Type" value="&quot;application/json&quot;"/>
+</xml-fragment>]]></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request/><con:originalUri>https://api.clickup.com/api/v2/task/86bz7w9vk/tag/tag_name</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request></con:method><con:method name="Remove Tag From Task" id="4faef390-dca4-4355-a2c7-89b290a05c74" method="DELETE"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>"application/json"</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>401</con:status><con:params/><con:element xmlns:tag="https://api.clickup.com/api/v2/task/task_id/tag/tag_name">tag:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element>Response</con:element></con:representation><con:request name="Request 1" id="c9f123bc-0296-4e8a-b496-28dbe0acf1f1" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Authorization" value="${#Project#Token}"/>
+  <con:entry key="Content-Type" value="&quot;application/json&quot;"/>
+</xml-fragment>]]></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request/><con:originalUri>https://api.clickup.com/api/v2/task/task_id/tag/tag_name</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request></con:method></con:resource></con:interface><con:testSuite id="0310635c-26c8-405a-98bf-fe3db427903d" name="https://api.clickup.com TestSuite"><con:description>TestSuite generated for REST Service [https://api.clickup.com]</con:description><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="bc1fa406-c059-4c16-ba23-8f9ea93969fb" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase" searchProperties="true"><con:description>TestCase generated for REST Resource [] located at [/api/v2/space/${#Project#space_id}/tag]</con:description><con:settings/><con:testStep type="restrequest" name="Get list of tags" id="477ebb69-4bc8-4bbd-bc06-b06b0f05fe62"><con:settings/><con:config service="https://api.clickup.com" resourcePath="/api/v2/space/${#Project#space_id}/tag" methodName="Get Space Tags" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Request 1" id="2961ea46-bda4-4217-9c01-e69967804342" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#Token}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request/><con:originalUri>https://api.clickup.com/api/v2/space/90152414834/tag</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="37723990-3ca7-4ada-ba65-a565fc98e052" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Create random tag name" id="95fd87a5-0851-4f8c-97bc-51a2a16399e1"><con:settings/><con:config><script>import java.util.Random
+import java.nio.charset.StandardCharsets
+
+// Function to generate a random string
+def generateRandomString(int length) {
+    // Define the characters to use for the random string
+    def characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+    def charactersLength = characters.length()
+    def random = new Random()
+
+    def randomString = new StringBuilder(length)
+    for (int i = 0; i &lt; length; i++) {
+        def randomIndex = random.nextInt(charactersLength)
+        randomString.append(characters.charAt(randomIndex))
+    }
+
+    return randomString.toString()
+}
+
+// Specify the desired length of the random string
+def stringLength = 12  // You can change this value to any desired length
+
+// Generate the random string
+def randomString = "tag name " + generateRandomString(stringLength)
+
+// Encode the tag name to replace spaces with %20
+def encodedTagName = URLEncoder.encode(randomString, StandardCharsets.UTF_8.toString())
+
+// Output the random string
+log.info("Generated Random String: " + encodedTagName)
+
+// Store the random string in a project-level property for use in other test cases
+context.testCase.testSuite.project.setPropertyValue("tag_name", encodedTagName)</script></con:config></con:testStep><con:testStep type="restrequest" name="Create New Tag" id="7f9b3497-0bab-4f4a-9c5f-c2150b3f8f0d"><con:settings/><con:config service="https://api.clickup.com" resourcePath="/api/v2/space/${#Project#space_id}/tag" methodName="Create Space Tag" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Request 1" id="02ccfa33-95d2-4225-97cf-f8cc0a49d7f5" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="pk_74479730_Z3JHDR03IN60ELVOY25UUXPU7NB6ATRS" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request>{
+"tag": {
+"name": "${#Project#tag_name}",
+"tag_fg": "#000000",
+"tag_bg": "#000000"
+	}
+}</con:request><con:originalUri>https://api.clickup.com/api/v2/space/90152414834/tag</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="be1f9b2f-2317-48fd-9553-97b476121d34" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Show status code" id="b3fbe79b-53ee-41e9-aa3a-b46d843df5ee"><con:settings/><con:config><script>import com.eviware.soapui.support.types.StringToStringMap
+
+// Get the HTTP status code from the response
+def getStatusCode = { context ->
+    def httpResponse = context.httpResponse
+    def headers = new StringToStringMap(httpResponse.responseHeaders)
+    def statusCode = headers.get("StatusCode")
+    return statusCode
+}
+
+// Get the current test case and its name
+def currentTestCase = testRunner.testCase
+def testCaseName = currentTestCase.name
+
+// Get the status code of the last executed test step
+def statusCode = getStatusCode(context)
+
+// Log the status code and test case name
+log.info("Status code for test case '$testCaseName': $statusCode")</script></con:config></con:testStep><con:loadTest id="0213b3f1-cb51-4620-a98e-d2c4e473e5ff" name="LoadTest 1"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties><con:property><con:name>RandomString</con:name><con:value>891sAbq6YDDG</con:value></con:property><con:property><con:name>tagName</con:name></con:property></con:properties></con:testCase><con:testCase id="c6efad13-d283-43ec-95f0-95d6493205af" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 2" searchProperties="true"><con:description>TestCase generated for REST Resource [{tag_name}] located at [/api/v2/space/${#Project#space_id}/tag/{tag_name}]</con:description><con:settings/><con:testStep type="groovy" name="Create random tag name" id="4e44d6b3-2ce1-4c0c-85e5-7c0964d0a456"><con:settings/><con:config><script>import java.util.Random
+import java.nio.charset.StandardCharsets
+
+// Function to generate a random string
+def generateRandomString(int length) {
+    // Define the characters to use for the random string
+    def characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+    def charactersLength = characters.length()
+    def random = new Random()
+
+    def randomString = new StringBuilder(length)
+    for (int i = 0; i &lt; length; i++) {
+        def randomIndex = random.nextInt(charactersLength)
+        randomString.append(characters.charAt(randomIndex))
+    }
+
+    return randomString.toString()
+}
+
+// Specify the desired length of the random string
+def stringLength = 12  // You can change this value to any desired length
+
+// Generate the random string
+def randomString = "tag name " + generateRandomString(stringLength)
+
+// Encode the tag name to replace spaces with %20
+def encodedTagName = URLEncoder.encode(randomString, StandardCharsets.UTF_8.toString())
+
+// Output the random string
+log.info("Generated Random String: " + encodedTagName)
+
+// Store the random string in a project-level property for use in other test cases
+context.testCase.testSuite.project.setPropertyValue("tag_name", encodedTagName)</script></con:config></con:testStep><con:testStep type="restrequest" name="Update Space Tag" id="86531e88-1b2a-4621-96ef-f6034e9d4594"><con:settings/><con:config service="https://api.clickup.com" resourcePath="/api/v2/space/${#Project#space_id}/tag/${#Project#tag_name}" methodName="Update Space Tag" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Request 1" id="a131bdf9-5ac9-4e54-b007-fc28765d769d" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#Token}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request>{
+"tag": {
+"name": "${#Project#tag_name}",
+"tag_fg": "#000000",
+"tag_bg": "#000000"
+	}
+}</con:request><con:originalUri>https://api.clickup.com/api/v2/space/90152414834/tag/tag_name</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="eb1de3d8-6122-4294-a77e-812990c659bf" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Show status code - Update Space Tag" id="e8ac72fe-8e4b-4a4a-87c9-0899dae79c58"><con:settings/><con:config><script>import com.eviware.soapui.support.types.StringToStringMap
+
+// Get the HTTP status code from the response
+def getStatusCode = { context ->
+    def httpResponse = context.httpResponse
+    def headers = new StringToStringMap(httpResponse.responseHeaders)
+    def statusCode = headers.get("StatusCode")
+    return statusCode
+}
+
+// Get the current test case and its name
+def currentTestCase = testRunner.testCase
+def testCaseName = currentTestCase.name
+
+// Get the status code of the last executed test step
+def statusCode = getStatusCode(context)
+
+// Log the status code and test case name
+log.info("Status code for test case '$testCaseName': $statusCode")</script></con:config></con:testStep><con:testStep type="restrequest" name="Delete Space Tag" id="cb020491-d72d-4ea8-a196-43340ea96ccb"><con:settings/><con:config service="https://api.clickup.com" resourcePath="/api/v2/space/${#Project#space_id}/tag/${#Project#tag_name}" methodName="Delete Space Tag" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Request 1" id="76f5a864-f4ef-40b3-ab48-859fe71c49d7" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="${#Project#Token}" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request/><con:originalUri>https://api.clickup.com/api/v2/space/90152414834/tag/tag_name</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="1cd3f69b-1282-46e7-b6a3-c30caed0c877" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Show status code - Delete Space Tag" id="017dfb1c-a715-4905-897a-5e824770d09e"><con:settings/><con:config><script>import com.eviware.soapui.support.types.StringToStringMap
+
+// Get the HTTP status code from the response
+def getStatusCode = { context ->
+    def httpResponse = context.httpResponse
+    def headers = new StringToStringMap(httpResponse.responseHeaders)
+    def statusCode = headers.get("StatusCode")
+    return statusCode
+}
+
+// Get the current test case and its name
+def currentTestCase = testRunner.testCase
+def testCaseName = currentTestCase.name
+
+// Get the status code of the last executed test step
+def statusCode = getStatusCode(context)
+
+// Log the status code and test case name
+log.info("Status code for test case '$testCaseName': $statusCode")</script></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="cbb018c8-2a30-45f5-ab0e-e5a91fa5e540" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 3" searchProperties="true"><con:description>TestCase generated for REST Resource [{tag_name}] located at [/api/v2/task/{task_id}/tag/{tag_name}]</con:description><con:settings/><con:testStep type="groovy" name="Create random tag name" id="d6909cbc-2017-4416-8ad0-5e09dcf94de0"><con:settings/><con:config><script>import java.util.Random
+import java.nio.charset.StandardCharsets
+
+// Function to generate a random string
+def generateRandomString(int length) {
+    // Define the characters to use for the random string
+    def characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+    def charactersLength = characters.length()
+    def random = new Random()
+
+    def randomString = new StringBuilder(length)
+    for (int i = 0; i &lt; length; i++) {
+        def randomIndex = random.nextInt(charactersLength)
+        randomString.append(characters.charAt(randomIndex))
+    }
+
+    return randomString.toString()
+}
+
+// Specify the desired length of the random string
+def stringLength = 12  // You can change this value to any desired length
+
+// Generate the random string
+def randomString = "tag name " + generateRandomString(stringLength)
+
+// Encode the tag name to replace spaces with %20
+def encodedTagName = URLEncoder.encode(randomString, StandardCharsets.UTF_8.toString())
+
+// Output the random string
+log.info("Generated Random String: " + encodedTagName)
+
+// Store the random string in a project-level property for use in other test cases
+context.testCase.testSuite.project.setPropertyValue("tag_name", encodedTagName)</script></con:config></con:testStep><con:testStep type="restrequest" name="Add Tag To Task" id="5291a89c-0496-49f0-9fd9-cb3dc899431a"><con:settings/><con:config service="https://api.clickup.com" resourcePath="/api/v2/task/${#Project#task_id}/tag/${#Project#tag_name}" methodName="Add Tag To Task" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="api/v2/task/{task_id}/tag/{tag_name}" id="dd60b01c-0361-477d-8b68-863322f340db" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Authorization" value="${#Project#Token}"/>
+  <con:entry key="Content-Type" value="&quot;application/json&quot;"/>
+</xml-fragment>]]></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request/><con:originalUri>https://api.clickup.com/api/v2/task/86bz7w9vk/tag/tag_name</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="26950ced-d535-4c6c-9f86-42b1c9ee64c1" name="Valid HTTP Status Codes"><con:configuration><codes>200
+</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Show status code - Add tag To Task" id="dd6ecbcf-27ac-4f9d-9e67-f386435f81bc"><con:settings/><con:config><script>import com.eviware.soapui.support.types.StringToStringMap
+
+// Get the HTTP status code from the response
+def getStatusCode = { context ->
+    def httpResponse = context.httpResponse
+    def headers = new StringToStringMap(httpResponse.responseHeaders)
+    def statusCode = headers.get("StatusCode")
+    return statusCode
+}
+
+// Get the current test case and its name
+def currentTestCase = testRunner.testCase
+def testCaseName = currentTestCase.name
+
+// Get the status code of the last executed test step
+def statusCode = getStatusCode(context)
+
+// Log the status code and test case name
+log.info("Status code for test case '$testCaseName': $statusCode")</script></con:config></con:testStep><con:testStep type="restrequest" name="Remove Tag From Task" id="54fe223d-5bf4-449d-88a6-2b10364505d0"><con:settings/><con:config service="https://api.clickup.com" resourcePath="/api/v2/task/${#Project#task_id}/tag/${#Project#tag_name}" methodName="Remove Tag From Task" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Request 1" id="c9f123bc-0296-4e8a-b496-28dbe0acf1f1" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Authorization" value="${#Project#Token}"/>
+  <con:entry key="Content-Type" value="&quot;application/json&quot;"/>
+</xml-fragment>]]></con:setting></con:settings><con:endpoint>https://api.clickup.com</con:endpoint><con:request/><con:originalUri>https://api.clickup.com/api/v2/task/task_id/tag/tag_name</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="407bf49b-02cc-4170-82ec-d1c9f57dd757" name="Valid HTTP Status Codes"><con:configuration><codes>200
+</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Show status code - Remove Tag from Task Space Tag" id="42685eab-2746-4517-aed0-7e10a9366812"><con:settings/><con:config><script>import com.eviware.soapui.support.types.StringToStringMap
+
+// Get the HTTP status code from the response
+def getStatusCode = { context ->
+    def httpResponse = context.httpResponse
+    def headers = new StringToStringMap(httpResponse.responseHeaders)
+    def statusCode = headers.get("StatusCode")
+    return statusCode
+}
+
+// Get the current test case and its name
+def currentTestCase = testRunner.testCase
+def testCaseName = currentTestCase.name
+
+// Get the status code of the last executed test step
+def statusCode = getStatusCode(context)
+
+// Log the status code and test case name
+log.info("Status code for test case '$testCaseName': $statusCode")</script></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties><con:property><con:name>Token</con:name><con:value>pk_74479730_Z3JHDR03IN60ELVOY25UUXPU7NB6ATRS</con:value></con:property><con:property><con:name>space_id</con:name><con:value>90152414834</con:value></con:property><con:property><con:name>tag_name</con:name><con:value>tag+name+CnWXo2tqlgfI</con:value></con:property><con:property><con:name>task_id</con:name><con:value>86bz7w9vk</con:value></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
